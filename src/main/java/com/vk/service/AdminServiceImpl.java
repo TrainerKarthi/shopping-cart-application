@@ -2,12 +2,20 @@ package com.vk.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.vk.dao.AdminDao;
 import com.vk.dto.Admin;
 
+@Service
 public class AdminServiceImpl implements AdminService{
+	
+	@Autowired
+	private AdminDao adminDao ;
 
 	public Admin saveAdmin(Admin p) {
-		return null;
+		return adminDao.saveAdmin(p) ;
 	}
 
 	public Admin findAdminById(int id) {
