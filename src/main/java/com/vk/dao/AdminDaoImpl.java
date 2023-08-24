@@ -8,12 +8,15 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import com.vk.dto.Admin;
 import com.vk.dto.Admin;
 
+@Repository
 public class AdminDaoImpl implements AdminDao {
 
-	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("karthik");
+	 EntityManagerFactory emf = Persistence.createEntityManagerFactory("karthik");
 
 	public Admin saveAdmin(Admin p) {
 		EntityManager em = emf.createEntityManager();
