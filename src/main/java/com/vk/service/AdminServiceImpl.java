@@ -2,6 +2,8 @@ package com.vk.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,10 @@ public class AdminServiceImpl implements AdminService{
 	public boolean updateAdminById(int id, Admin p) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public boolean findByEmailAndPassword(String email , String password , HttpServletRequest req ) {
+		return adminDao.findByEmailAndPassword(email, password,req.getSession()) ;
 	}
 
 }

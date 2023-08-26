@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Repository;
 
@@ -58,5 +59,23 @@ public class AdminDaoImpl implements AdminDao {
 		}
 		return false;
 	}
+	
+	public boolean findByEmailAndPassword(String email , String password, HttpSession session) {
+		EntityManager em = emf.createEntityManager() ;
+		Query query = em.createQuery("select a from Admin a where a.email=?1 and a.password=?2") ;
+		query.setParameter(1, email) ;
+		query.setParameter(2, password) ;
+		List<Admin> admin =  query.getResultList() ;
+		if(admin.size()>0) {
+			for(Admin a : admin) {
+				session.setAttribute("admindetails", a);
+			}
+			return true ;
+		}
+		else {
+			return false ;
+		}
+	}
+
 
 }

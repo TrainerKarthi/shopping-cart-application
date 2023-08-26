@@ -7,13 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<a>View merchant requests</a>
-<a>block merchants</a>
-<a>block customers</a>
-<a>unblock customers</a>
-<a>unblock merchants</a>
-<a>delete merchants</a>
-
+<a href="createadmin">Sign Up</a>    <br>
+<a href="adminlogin">Log in</a>    <br>
 </body>
 </html>

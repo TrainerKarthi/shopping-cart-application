@@ -2,6 +2,8 @@ package com.vk.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.vk.dto.Admin;
 
 public interface AdminDao {
@@ -13,4 +15,5 @@ public interface AdminDao {
 
 	public boolean updateAdminById(int id, Admin p);
 
+	public boolean findByEmailAndPassword(String email,String password, HttpSession session) ;
 }

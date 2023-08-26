@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<form:form action="saveadmin" modelAttribute="admin" method="post">
 
 
@@ -19,7 +20,7 @@ password: <form:input path="password" />
 		<br>
 
 <input type="submit">
-
+ 
 
 
 	</form:form>

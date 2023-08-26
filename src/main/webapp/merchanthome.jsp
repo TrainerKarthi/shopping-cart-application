@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="addmerchant">Create Account</a>
+<a href="merchantlogin">Login</a>
 </body>
 </html>
